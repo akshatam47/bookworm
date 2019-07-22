@@ -1,0 +1,41 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <form  [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+    <pre>
+    <legend>Register Here</legend>
+<div class="form-group">
+First Name:<input type="text" placeholder="Enter your Name" formControlName="firstname"> 
+<br>
+Last Name:<input type="text" placeholder="Enter your Lastname" formControlName="lastname">
+<br>
+Email Id:<input type="text" placeholder="Enter your Email Id" formControlName="emailid">
+<br>
+Password:<input type="text" placeholder="Create Password" formControlName="password">
+<br>
+Confirm Password:<input type="text" placeholder="Confirm new password" formControlName="password">
+<br>
+Mobile No:<input type="text" placeholder="Enter your MobileNo" formControlName="mobileno">
+<br>
+Address:
+Street<input type="text" formControlName="street"><br>
+House No<input type="text" formControlName="houseno"><br>
+City<input type="text" formControlName="city"><br>
+Pincode<input type="text" formControlName="pincode">
+<br>
+Date Of Birth:<input type="text" placeholder="Enter your DOB" formControlName="dateofbirth">
+<br>
+<input type="submit" value="Register">
+    </div>
+    </pre>
+   </fieldset>
+      </form>
+
+      <div *ngIf="firstname.errors?.minlength">
+        Name must be at least 5 characters long.
+   </div> 
+
+  
+  
+
