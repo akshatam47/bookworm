@@ -1,0 +1,50 @@
+for email : 
+<div class="form-group">
+              <label for="For Email">Email</label>
+              <input [class.is-invalid]="Email.invalid && Email.touched" 
+              type="text" 
+              placeholder="Enter your Email Id" 
+              class="form-control" 
+              formControlName="Email"
+              id="Email">
+              <div *ngIf="Email.invalid && Email.touched">
+                    <small *ngIf="Email.errors?.required" class="text-danger">Email is required</small>
+                    <small *ngIf="Email.errors?.email" class="text-danger">Invalid Email</small>
+              </div>
+          </div>
+
+
+get Email()
+{
+  return this.registrationUserForm.get('Email');
+}
+
+ Email: ['', [Validators.required,Validators.email]],
+
+---------------------------------------------------------------------
+for name:
+<div class="form-group">
+            <label for="For Name">NAME</label>
+            <input [class.is-invalid]="Name.invalid && Name.touched"
+            type="text" 
+            placeholder="Enter your Name" 
+            class="form-control" 
+            formControlName="Name"
+            id="Name"> 
+            <div *ngIf="Name.invalid && Name.touched">
+                <small *ngIf="Name.errors?.required" class="text-danger">Name is required</small>
+                <small *ngIf="Name.errors?.minlength" class="text-danger">Name must be at least 5 characters</small>
+            </div>
+          </div>
+
+
+get Name()
+{
+  return this.registrationUserForm.get('Name');
+}
+
+ Name: ['', [Validators.required,Validators.minLength(5)]],
+
+-----------------------------------------------------------------------
+
+
